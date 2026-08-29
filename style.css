@@ -513,6 +513,128 @@ body::after {
   border-color: #25f4ee;
 }
 
+/* ============================= */
+/* HORARIOS */
+/* ============================= */
+
+.schedule {
+  margin-top: 15px;
+
+  padding: 20px;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.06),
+      rgba(255,255,255,.025)
+    );
+
+  border: 1px solid rgba(255,255,255,.10);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+
+/* TITULO */
+
+.schedule-title {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 18px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  color: white;
+}
+
+.schedule-title i {
+  color: var(--red);
+
+  font-size: 16px;
+}
+
+
+/* FILAS */
+
+.schedule-row {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 10px 0;
+
+  border-bottom:
+    1px solid rgba(255,255,255,.06);
+
+  color: #bbb;
+
+  font-size: 12px;
+}
+
+.schedule-row:last-child {
+  border-bottom: none;
+}
+
+
+/* HORARIO */
+
+.schedule-row span:last-child {
+  text-align: right;
+
+  color: #ddd;
+
+  font-weight: 500;
+}
+
+
+/* DÍA CERRADO */
+
+.schedule-row.closed span:last-child {
+  color: var(--red);
+
+  font-weight: 700;
+}
+
+
+/* SABADO */
+
+.schedule-row.saturday {
+  font-weight: 700;
+}
+
+.schedule-row.saturday span {
+  color: white;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 520px) {
+
+  .schedule {
+    padding: 17px;
+  }
+
+  .schedule-row {
+    font-size: 11px;
+  }
+
+}
 
 /* ============================= */
 /* SEPARADOR PAGOS */

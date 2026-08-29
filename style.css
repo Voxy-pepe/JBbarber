@@ -1,3 +1,7 @@
+/* ============================= */
+/* CONFIGURACIÓN GENERAL */
+/* ============================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -93,7 +97,7 @@ body::after {
 
 
 /* ============================= */
-/* CONTENEDOR GENERAL */
+/* CONTENEDOR */
 /* ============================= */
 
 .page {
@@ -173,7 +177,6 @@ body::after {
 }
 
 @keyframes barberMove {
-
   from {
     background-position: 0 0;
   }
@@ -181,42 +184,35 @@ body::after {
   to {
     background-position: 100px 0;
   }
-
 }
 
 
 /* ============================= */
-/* LOGO JBBARBER */
+/* LOGO */
 /* ============================= */
 
 .logo-wrapper {
-  display: flex;
+  width: 100%;
 
+  display: flex;
   justify-content: center;
   align-items: center;
 
   margin-top: 12px;
-  margin-bottom: 12px;
-
-  width: 100%;
+  margin-bottom: 10px;
 }
 
-
-/* IMPORTANTE:
-   ESTE ES EL TAMAÑO DEL LOGO
-*/
-
 .barber-logo {
-  width: 90px !important;
-  max-width: 90px !important;
+  width: 130px !important;
+  max-width: 130px !important;
 
   height: auto !important;
 
   display: block;
 
-  margin: 0 auto;
-
   object-fit: contain;
+
+  margin: 0 auto;
 
   filter:
     drop-shadow(
@@ -239,35 +235,17 @@ body::after {
 
 
 /* ============================= */
-/* MARCA / TEXTO */
+/* TEXTO SUPERIOR */
 /* ============================= */
 
 .brand {
   text-align: center;
 
-  margin-top: 8px;
-}
-
-.brand h1 {
-  font-family: "Bebas Neue", sans-serif;
-
-  font-size: 48px;
-
-  letter-spacing: 3px;
-
-  line-height: 1;
-}
-
-.brand h1 span:first-child {
-  color: white;
-}
-
-.brand h1 span:last-child {
-  color: var(--red);
+  margin-top: 5px;
 }
 
 .subtitle {
-  margin-top: 5px;
+  margin-top: 4px;
 
   color: #aaa;
 
@@ -308,11 +286,11 @@ body::after {
 
 
 /* ============================= */
-/* CONTENEDOR DE BOTONES */
+/* BOTONES */
 /* ============================= */
 
 .links {
-  margin-top: 28px;
+  margin-top: 27px;
 
   display: flex;
 
@@ -321,11 +299,6 @@ body::after {
   gap: 13px;
 }
 
-
-/* ============================= */
-/* BOTONES GENERALES */
-/* ============================= */
-
 .link {
   position: relative;
 
@@ -333,13 +306,9 @@ body::after {
 
   min-height: 61px;
 
-  border-radius: 17px;
+  padding: 17px 45px 17px 60px;
 
-  padding:
-    17px
-    45px
-    17px
-    60px;
+  border-radius: 17px;
 
   display: flex;
 
@@ -362,15 +331,10 @@ body::after {
       rgba(255,255,255,.025)
     );
 
-  border:
-    1px solid rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.10);
 
   box-shadow:
-    inset
-    0
-    1px
-    0
-    rgba(255,255,255,.06);
+    inset 0 1px 0 rgba(255,255,255,.06);
 
   cursor: pointer;
 
@@ -384,7 +348,9 @@ body::after {
 }
 
 
-/* EFECTO BRILLO */
+/* ============================= */
+/* BRILLO EN LOS BOTONES */
+/* ============================= */
 
 .link::before {
   content: "";
@@ -426,14 +392,10 @@ body::after {
       rgba(255,255,255,.04)
     );
 
-  border-color:
-    rgba(255,255,255,.2);
+  border-color: rgba(255,255,255,.2);
 
   box-shadow:
-    0
-    12px
-    25px
-    rgba(0,0,0,.22);
+    0 12px 25px rgba(0,0,0,.22);
 }
 
 
@@ -458,15 +420,14 @@ body::after {
 
   background: rgba(255,255,255,.07);
 
-  border:
-    1px solid rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.08);
 
   font-size: 18px;
 }
 
 
 /* ============================= */
-/* FLECHA DERECHA */
+/* FLECHA */
 /* ============================= */
 
 .arrow {
@@ -481,7 +442,7 @@ body::after {
 
 
 /* ============================= */
-/* BOTÓN RESERVAR */
+/* RESERVAR CITA */
 /* ============================= */
 
 .booking {
@@ -494,14 +455,10 @@ body::after {
       #a20d12
     );
 
-  border:
-    1px solid rgba(255,255,255,.24);
+  border: 1px solid rgba(255,255,255,.24);
 
   box-shadow:
-    0
-    14px
-    35px
-    rgba(215,25,32,.22);
+    0 14px 35px rgba(215,25,32,.22);
 }
 
 .booking:hover {
@@ -537,36 +494,20 @@ body::after {
 
 
 /* ============================= */
-/* BOTÓN TELÉFONO */
+/* EFECTOS DE LOS BOTONES */
 /* ============================= */
 
 .phone:hover {
-  border-color:
-    rgba(255,255,255,.4);
+  border-color: rgba(255,255,255,.4);
 }
-
-
-/* ============================= */
-/* WHATSAPP */
-/* ============================= */
 
 .whatsapp:hover {
   border-color: #25d366;
 }
 
-
-/* ============================= */
-/* INSTAGRAM */
-/* ============================= */
-
 .instagram:hover {
   border-color: #e1306c;
 }
-
-
-/* ============================= */
-/* TIKTOK */
-/* ============================= */
 
 .tiktok:hover {
   border-color: #25f4ee;
@@ -574,7 +515,7 @@ body::after {
 
 
 /* ============================= */
-/* DIVISOR DE PAGOS */
+/* SEPARADOR PAGOS */
 /* ============================= */
 
 .separator {
@@ -584,10 +525,7 @@ body::after {
 
   gap: 12px;
 
-  margin:
-    24px
-    0
-    4px;
+  margin: 24px 0 4px;
 
   color: #555;
 
@@ -602,8 +540,7 @@ body::after {
 
   height: 1px;
 
-  background:
-    rgba(255,255,255,.08);
+  background: rgba(255,255,255,.08);
 }
 
 
@@ -621,14 +558,10 @@ body::after {
       #4d0d9f
     );
 
-  border:
-    1px solid rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.15);
 
   box-shadow:
-    0
-    12px
-    30px
-    rgba(109,30,212,.18);
+    0 12px 30px rgba(109,30,212,.18);
 }
 
 .zelle:hover {
@@ -641,8 +574,7 @@ body::after {
 }
 
 .zelle .icon-box {
-  background:
-    rgba(0,0,0,.16);
+  background: rgba(0,0,0,.16);
 }
 
 
@@ -668,7 +600,7 @@ footer strong {
 
 
 /* ============================= */
-/* MODAL DE ZELLE */
+/* MODAL ZELLE */
 /* ============================= */
 
 .modal {
@@ -683,8 +615,7 @@ footer strong {
 
   padding: 18px;
 
-  background:
-    rgba(0,0,0,.86);
+  background: rgba(0,0,0,.86);
 
   backdrop-filter: blur(10px);
 
@@ -697,7 +628,7 @@ footer strong {
 
 
 /* ============================= */
-/* CONTENIDO DEL MODAL */
+/* CONTENIDO MODAL */
 /* ============================= */
 
 .modal-content {
@@ -707,10 +638,7 @@ footer strong {
 
   max-width: 390px;
 
-  padding:
-    32px
-    24px
-    25px;
+  padding: 32px 24px 25px;
 
   border-radius: 24px;
 
@@ -721,23 +649,17 @@ footer strong {
       #0e0e0e
     );
 
-  border:
-    1px solid rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.12);
 
   box-shadow:
-    0
-    30px
-    90px
-    rgba(0,0,0,.75);
+    0 30px 90px rgba(0,0,0,.75);
 
   text-align: center;
 
-  animation:
-    popup .25s ease;
+  animation: popup .25s ease;
 }
 
 @keyframes popup {
-
   from {
     opacity: 0;
 
@@ -753,7 +675,6 @@ footer strong {
       scale(1)
       translateY(0);
   }
-
 }
 
 
@@ -765,7 +686,6 @@ footer strong {
   position: absolute;
 
   top: 12px;
-
   right: 17px;
 
   color: #888;
@@ -788,10 +708,7 @@ footer strong {
   width: 70px;
   height: 70px;
 
-  margin:
-    0
-    auto
-    17px;
+  margin: 0 auto 17px;
 
   border-radius: 20px;
 
@@ -810,10 +727,7 @@ footer strong {
   font-size: 27px;
 
   box-shadow:
-    0
-    15px
-    35px
-    rgba(109,30,212,.25);
+    0 15px 35px rgba(109,30,212,.25);
 }
 
 
@@ -825,7 +739,7 @@ footer strong {
   font-size: 22px;
 }
 
-.modal-content .description {
+.description {
   margin-top: 9px;
 
   color: #999;
@@ -841,20 +755,15 @@ footer strong {
 /* ============================= */
 
 .number-box {
-  margin:
-    20px
-    0
-    14px;
+  margin: 20px 0 14px;
 
   padding: 16px;
 
   border-radius: 14px;
 
-  background:
-    rgba(255,255,255,.055);
+  background: rgba(255,255,255,.055);
 
-  border:
-    1px solid rgba(255,255,255,.09);
+  border: 1px solid rgba(255,255,255,.09);
 
   font-size: 20px;
 
@@ -865,7 +774,7 @@ footer strong {
 
 
 /* ============================= */
-/* COPIAR NÚMERO */
+/* BOTÓN COPIAR */
 /* ============================= */
 
 .copy-btn {
@@ -881,9 +790,7 @@ footer strong {
 
   color: white;
 
-  font-family:
-    "Montserrat",
-    sans-serif;
+  font-family: "Montserrat", sans-serif;
 
   font-size: 13px;
 
@@ -895,8 +802,7 @@ footer strong {
 }
 
 .copy-btn:hover {
-  transform:
-    translateY(-2px);
+  transform: translateY(-2px);
 
   background: #7d2ce2;
 }
@@ -939,41 +845,30 @@ footer strong {
 
 
 /* ============================= */
-/* CELULAR */
+/* CELULARES */
 /* ============================= */
 
 @media (max-width: 520px) {
 
   body {
-    padding:
-      16px
-      12px
-      35px;
+    padding: 16px 12px 35px;
   }
 
   .card {
-    padding:
-      25px
-      17px
-      24px;
+    padding: 25px 17px 24px;
 
     border-radius: 24px;
   }
 
-
-  /* LOGO MÁS PEQUEÑO EN CELULAR */
-
   .barber-logo {
-    width: 140px !important;
-    max-width: 140px !important;
+    width: 120px !important;
+    max-width: 120px !important;
   }
-
 
   .logo-wrapper {
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
-
 
   .subtitle {
     font-size: 9px;
@@ -981,25 +876,21 @@ footer strong {
     letter-spacing: 2.5px;
   }
 
-
   .badge {
     margin-top: 12px;
 
     font-size: 10px;
   }
 
-
   .links {
     margin-top: 24px;
   }
-
 
   .link {
     min-height: 58px;
 
     font-size: 13px;
   }
-
 
   .booking {
     min-height: 65px;
@@ -1015,8 +906,8 @@ footer strong {
 @media (max-width: 380px) {
 
   .barber-logo {
-    width: 65px !important;
-    max-width: 65px !important;
+    width: 110px !important;
+    max-width: 110px !important;
   }
 
 }

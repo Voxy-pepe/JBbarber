@@ -2,26 +2,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .barber-logo {
-  width: 120px;
+  width: 95px !important;
+  max-width: 95px !important;
   height: auto;
   display: block;
+  margin: 0 auto;
 
-  filter:
-    drop-shadow(0 8px 14px rgba(0,0,0,.6));
-
+  filter: drop-shadow(0 8px 14px rgba(0,0,0,.55));
   transition: transform .3s ease;
 }
 
 .barber-logo:hover {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
 @media (max-width: 500px) {
   .barber-logo {
-    width: 100px;
+    width: 80px !important;
+    max-width: 80px !important;
   }
 }

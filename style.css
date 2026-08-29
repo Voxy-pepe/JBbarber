@@ -199,12 +199,12 @@ body::after {
   align-items: center;
 
   margin-top: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .barber-logo {
-  width: 130px !important;
-  max-width: 130px !important;
+  width: 190px !important;
+  max-width: 190px !important;
 
   height: auto !important;
 
@@ -861,13 +861,13 @@ footer strong {
   }
 
   .barber-logo {
-    width: 120px !important;
-    max-width: 120px !important;
+    width: 170px !important;
+    max-width: 170px !important;
   }
 
   .logo-wrapper {
     margin-top: 10px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
 
   .subtitle {
@@ -906,8 +906,8 @@ footer strong {
 @media (max-width: 380px) {
 
   .barber-logo {
-    width: 110px !important;
-    max-width: 110px !important;
+    width: 150px !important;
+    max-width: 150px !important;
   }
 
 }

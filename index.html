@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JBbarber</title>
+
+  <!-- FUENTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ICONOS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Poppins", sans-serif;
+      color: white;
+
+      background:
+        radial-gradient(circle at top, #2a2a2a 0%, #111 45%, #050505 100%);
+
+      display: flex;
+      justify-content: center;
+
+      padding: 35px 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 460px;
+      text-align: center;
+    }
+
+    /* ========================= */
+    /* BARRA CLÁSICA DE BARBERÍA */
+    /* ========================= */
+
+    .barber-line {
+      width: 100%;
+      height: 9px;
+
+      margin-bottom: 35px;
+
+      border-radius: 20px;
+
+      background: repeating-linear-gradient(
+        135deg,
+        #d71920 0px,
+        #d71920 18px,
+
+        #ffffff 18px,
+        #ffffff 36px,
+
+        #0057b8 36px,
+        #0057b8 54px,
+
+        #ffffff 54px,
+        #ffffff 72px
+      );
+
+      background-size: 100px 100px;
+
+      animation: barberMove 4s linear infinite;
+
+      box-shadow: 0 5px 20px rgba(0,0,0,.4);
+    }
+
+    @keyframes barberMove {
+      from {
+        background-position: 0 0;
+      }
+
+      to {
+        background-position: 100px 0;
+      }
+    }
+
+    /* ========================= */
+    /* LOGO */
+    /* ========================= */
+
+    .logo {
+      width: 130px;
+      height: 130px;
+
+      margin: auto;
+
+      border-radius: 50%;
+
+      background: linear-gradient(
+        145deg,
+        #1c1c1c,
+        #080808
+      );
+
+      border: 4px solid white;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      box-shadow:
+        0 0 0 5px #d71920,
+        0 0 0 9px #0057b8,
+        0 20px 40px rgba(0,0,0,.65);
+    }
+
+    .logo i {
+      font-size: 55px;
+      transform: rotate(-10deg);
+    }
+
+    /* ========================= */
+    /* NOMBRE */
+    /* ========================= */
+
+    h1 {
+      font-family: "Anton", sans-serif;
+
+      font-size: 50px;
+
+      letter-spacing: 2px;
+
+      margin-top: 28px;
+
+      text-transform: uppercase;
+
+      line-height: 1;
+    }
+
+    .subtitle {
+      margin-top: 10px;
+
+      color: #bdbdbd;
+
+      font-size: 13px;
+
+      letter-spacing: 3px;
+    }
+
+    /* ========================= */
+    /* LINKS */
+    /* ========================= */
+
+    .links {
+      margin-top: 35px;
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 14px;
+    }
+
+    .link {
+      position: relative;
+
+      width: 100%;
+
+      min-height: 58px;
+
+      padding: 17px 20px;
+
+      border-radius: 15px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: rgba(255,255,255,.065);
+
+      border: 1px solid rgba(255,255,255,.12);
+
+      backdrop-filter: blur(12px);
+
+      color: white;
+
+      text-decoration: none;
+
+      font-family: "Poppins", sans-serif;
+
+      font-size: 15px;
+
+      font-weight: 600;
+
+      cursor: pointer;
+
+      transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .link i {
+      position: absolute;
+      left: 21px;
+
+      font-size: 21px;
+
+      width: 25px;
+      text-align: center;
+    }
+
+    .link:hover {
+      transform: translateY(-3px);
+
+      background: rgba(255,255,255,.12);
+
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    }
+
+    /* ========================= */
+    /* RESERVAR CITA */
+    /* ========================= */
+
+    .booking {
+      background: linear-gradient(
+        135deg,
+        #d71920,
+        #9d0d12
+      );
+
+      border: 1px solid rgba(255,255,255,.25);
+
+      font-size: 16px;
+
+      min-height: 64px;
+
+      box-shadow:
+        0 12px 30px rgba(215,25,32,.25);
+    }
+
+    .booking:hover {
+      background: linear-gradient(
+        135deg,
+        #f1252d,
+        #b70f16
+      );
+
+      transform: translateY(-3px) scale(1.01);
+    }
+
+    /* ========================= */
+    /* WHATSAPP */
+    /* ========================= */
+
+    .whatsapp:hover {
+      border-color: #25d366;
+    }
+
+    /* ========================= */
+    /* INSTAGRAM */
+    /* ========================= */
+
+    .instagram:hover {
+      border-color: #e1306c;
+    }
+
+    /* ========================= */
+    /* TIKTOK */
+    /* ========================= */
+
+    .tiktok:hover {
+      border-color: #25f4ee;
+    }
+
+    /* ========================= */
+    /* ZELLE */
+    /* ========================= */
+
+    .zelle {
+      background: linear-gradient(
+        135deg,
+        #6d1ed4,
+        #8739ef
+      );
+
+      border: none;
+
+      box-shadow:
+        0 10px 28px rgba(109,30,212,.25);
+    }
+
+    .zelle:hover {
+      background: linear-gradient(
+        135deg,
+        #7d29e7,
+        #9a50ff
+      );
+    }
+
+    /* ========================= */
+    /* FOOTER */
+    /* ========================= */
+
+    footer {
+      margin-top: 35px;
+
+      color: #666;
+
+      font-size: 12px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* ========================= */
+    /* MODAL ZELLE */
+    /* ========================= */
+
+    .modal {
+      position: fixed;
+
+      inset: 0;
+
+      display: none;
+
+      justify-content: center;
+      align-items: center;
+
+      padding: 20px;
+
+      background: rgba(0,0,0,.82);
+
+      backdrop-filter: blur(8px);
+
+      z-index: 1000;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      position: relative;
+
+      width: 100%;
+      max-width: 390px;
+
+      padding: 32px 25px;
+
+      border-radius: 22px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #191919,
+          #101010
+        );
+
+      border: 1px solid rgba(255,255,255,.13);
+
+      box-shadow:
+        0 25px 70px rgba(0,0,0,.75);
+
+      animation: modalAnimation .25s ease;
+    }
+
+    @keyframes modalAnimation {
+      from {
+        opacity: 0;
+        transform: scale(.92);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .close {
+      position: absolute;
+
+      top: 12px;
+      right: 18px;
+
+      font-size: 30px;
+
+      color: #aaa;
+
+      cursor: pointer;
+
+      transition: .2s;
+    }
+
+    .close:hover {
+      color: white;
+    }
+
+    .zelle-icon {
+      width: 70px;
+      height: 70px;
+
+      margin: 0 auto 18px;
+
+      border-radius: 50%;
+
+      background: #6d1ed4;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 30px;
+
+      box-shadow:
+        0 10px 30px rgba(109,30,212,.35);
+    }
+
+    .modal-content h2 {
+      font-size: 24px;
+
+      margin-bottom: 10px;
+    }
+
+    .modal-description {
+      color: #aaa;
+
+      font-size: 14px;
+
+      line-height: 1.7;
+    }
+
+    .zelle-number {
+      margin: 22px 0 17px;
+
+      padding: 15px;
+
+      border-radius: 12px;
+
+      background: rgba(255,255,255,.07);
+
+      border: 1px solid rgba(255,255,255,.1);
+
+      font-size: 20px;
+
+      font-weight: 600;
+
+      letter-spacing: .5px;
+    }
+
+    .copy-button {
+      width: 100%;
+
+      border: none;
+
+      border-radius: 12px;
+
+      padding: 15px;
+
+      font-family: "Poppins", sans-serif;
+
+      font-weight: 600;
+
+      font-size: 14px;
+
+      color: white;
+
+      background: #6d1ed4;
+
+      cursor: pointer;
+
+      transition: .2s;
+    }
+
+    .copy-button:hover {
+      transform: translateY(-2px);
+
+      background: #8238e8;
+    }
+
+    .copy-button i {
+      margin-right: 7px;
+    }
+
+    .copy-message {
+      display: none;
+
+      margin-top: 12px;
+
+      color: #7ee787;
+
+      font-size: 13px;
+    }
+
+    .zelle-info {
+      margin-top: 20px;
+
+      color: #777;
+
+      font-size: 12px;
+
+      line-height: 1.7;
+    }
+
+    /* ========================= */
+    /* CELULAR */
+    /* ========================= */
+
+    @media (max-width: 500px) {
+
+      body {
+        padding: 25px 17px;
+      }
+
+      .logo {
+        width: 112px;
+        height: 112px;
+      }
+
+      .logo i {
+        font-size: 47px;
+      }
+
+      h1 {
+        font-size: 43px;
+      }
+
+      .links {
+        margin-top: 30px;
+      }
+
+      .link {
+        min-height: 57px;
+      }
+
+      .booking {
+        min-height: 62px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <!-- BARRA BARBERÍA -->
+
+    <div class="barber-line"></div>
+
+
+    <!-- LOGO -->
+
+    <div class="logo">
+      <i class="fa-solid fa-scissors"></i>
+    </div>
+
+
+    <!-- NOMBRE -->
+
+    <h1>JBbarber</h1>
+
+    <p class="subtitle">
+      CUTS • BEARD • STYLE
+    </p>
+
+
+    <!-- BOTONES -->
+
+    <div class="links">
+
+
+      <!-- RESERVAR -->
+
+      <a
+        class="link booking"
+        href="https://javiercutz.booksy.com/a/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <i class="fa-solid fa-calendar-check"></i>
+
+        RESERVAR CITA
+
+      </a>
+
+
+      <!-- LLAMAR -->
+
+      <a
+        class="link"
+        href="tel:+16598373060"
+      >
+
+        <i class="fa-solid fa-phone"></i>
+
+        Llamar
+
+      </a>
+
+
+      <!-- WHATSAPP -->
+
+      <a
+        class="link whatsapp"
+        href="https://wa.me/16598373060"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+        WhatsApp
+
+      </a>
+
+
+      <!-- INSTAGRAM -->
+
+      <a
+        class="link instagram"
+        href="https://www.instagram.com/jb_cutz.08/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <i class="fa-brands fa-instagram"></i>
+
+        Instagram
+
+      </a>
+
+
+      <!-- TIKTOK -->
+
+      <a
+        class="link tiktok"
+        href="https://www.tiktok.com/@jb.cutz08?lang=es-419"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <i class="fa-brands fa-tiktok"></i>
+
+        TikTok
+
+      </a>
+
+
+      <!-- ZELLE -->
+
+      <button
+        class="link zelle"
+        type="button"
+        onclick="openZelle()"
+      >
+
+        <i class="fa-solid fa-dollar-sign"></i>
+
+        Pagar con Zelle
+
+      </button>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+      💈 <strong>JBbarber</strong> © 2026
+
+    </footer>
+
+  </main>
+
+
+  <!-- ========================= -->
+  <!-- VENTANA ZELLE -->
+  <!-- ========================= -->
+
+  <div
+    class="modal"
+    id="zelleModal"
+  >
+
+    <div class="modal-content">
+
+      <span
+        class="close"
+        onclick="closeZelle()"
+      >
+        &times;
+      </span>
+
+
+      <div class="zelle-icon">
+
+        <i class="fa-solid fa-dollar-sign"></i>
+
+      </div>
+
+
+      <h2>
+        Pagar con Zelle
+      </h2>
+
+
+      <p class="modal-description">
+
+        Envía tu pago mediante Zelle usando el siguiente número:
+
+      </p>
+
+
+      <div class="zelle-number">
+
+        +1 (659) 837-3060
+
+      </div>
+
+
+      <button
+        class="copy-button"
+        onclick="copyZelleNumber()"
+      >
+
+        <i class="fa-regular fa-copy"></i>
+
+        Copiar número
+
+      </button>
+
+
+      <p
+        class="copy-message"
+        id="copyMessage"
+      >
+
+        ✓ Número copiado
+
+      </p>
+
+
+      <p class="zelle-info">
+
+        Abre la aplicación de tu banco, entra a Zelle y pega este número como destinatario antes de enviar el pago.
+
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- ========================= -->
+  <!-- JAVASCRIPT -->
+  <!-- ========================= -->
+
+  <script>
+
+    function openZelle() {
+
+      document
+        .getElementById("zelleModal")
+        .classList.add("active");
+
+      document.body.style.overflow = "hidden";
+
+    }
+
+
+    function closeZelle() {
+
+      document
+        .getElementById("zelleModal")
+        .classList.remove("active");
+
+      document.body.style.overflow = "auto";
+
+    }
+
+
+    function copyZelleNumber() {
+
+      const number = "16598373060";
+
+      navigator.clipboard.writeText(number)
+        .then(() => {
+
+          const message =
+            document.getElementById("copyMessage");
+
+          message.style.display = "block";
+
+          setTimeout(() => {
+
+            message.style.display = "none";
+
+          }, 2500);
+
+        });
+
+    }
+
+
+    /* CERRAR AL TOCAR FUERA */
+
+    window.addEventListener(
+      "click",
+      function(event) {
+
+        const modal =
+          document.getElementById("zelleModal");
+
+        if (event.target === modal) {
+
+          closeZelle();
+
+        }
+
+      }
+    );
+
+
+    /* CERRAR CON ESC */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (event.key === "Escape") {
+
+          closeZelle();
+
+        }
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>

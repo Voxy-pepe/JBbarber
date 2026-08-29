@@ -1,0 +1,11 @@
+.booking {
+  background: linear-gradient(135deg, #d71920, #a90f15);
+  border: 1px solid rgba(255,255,255,.25);
+  font-size: 16px;
+  box-shadow: 0 10px 30px rgba(215,25,32,.25);
+}
+
+.booking:hover {
+  background: linear-gradient(135deg, #ef252c, #c3151c);
+  transform: translateY(-3px) scale(1.01);
+}

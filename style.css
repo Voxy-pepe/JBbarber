@@ -1,5 +1,5 @@
 /* ============================= */
-/* CONFIGURACIÓN GENERAL */
+/* GENERAL SETTINGS */
 /* ============================= */
 
 * {
@@ -24,9 +24,7 @@ html {
 
 body {
   min-height: 100vh;
-
   font-family: "Montserrat", sans-serif;
-
   color: white;
 
   background:
@@ -58,7 +56,7 @@ body {
 
 
 /* ============================= */
-/* LUCES DEL FONDO */
+/* BACKGROUND LIGHT EFFECTS */
 /* ============================= */
 
 body::before,
@@ -97,7 +95,7 @@ body::after {
 
 
 /* ============================= */
-/* CONTENEDOR GENERAL */
+/* PAGE CONTAINER */
 /* ============================= */
 
 .page {
@@ -106,12 +104,13 @@ body::after {
   z-index: 1;
 
   width: 100%;
+
   max-width: 500px;
 }
 
 
 /* ============================= */
-/* TARJETA PRINCIPAL */
+/* MAIN CARD */
 /* ============================= */
 
 .card {
@@ -143,7 +142,7 @@ body::after {
 
 
 /* ============================= */
-/* BARRA SUPERIOR DE BARBERÍA */
+/* BARBER STRIPE */
 /* ============================= */
 
 .barber-top {
@@ -239,7 +238,7 @@ body::after {
 
 
 /* ============================= */
-/* TEXTO SUPERIOR */
+/* HEADER TEXT */
 /* ============================= */
 
 .brand {
@@ -292,13 +291,14 @@ body::after {
 
 
 /* ============================= */
-/* CONTENEDOR DE LINKS */
+/* LINKS CONTAINER */
 /* ============================= */
 
 .links {
   margin-top: 27px;
 
   display: flex;
+
   flex-direction: column;
 
   gap: 13px;
@@ -306,7 +306,7 @@ body::after {
 
 
 /* ============================= */
-/* BOTONES GENERALES */
+/* GENERAL BUTTONS */
 /* ============================= */
 
 .link {
@@ -366,7 +366,7 @@ body::after {
 
 
 /* ============================= */
-/* EFECTO DE BRILLO */
+/* BUTTON SHINE EFFECT */
 /* ============================= */
 
 .link::before {
@@ -380,8 +380,7 @@ body::after {
   width: 35%;
   height: 200%;
 
-  transform:
-    rotate(25deg);
+  transform: rotate(25deg);
 
   background:
     linear-gradient(
@@ -418,7 +417,7 @@ body::after {
 
 
 /* ============================= */
-/* CAJA DE ICONOS */
+/* BUTTON ICONS */
 /* ============================= */
 
 .icon-box {
@@ -447,7 +446,7 @@ body::after {
 
 
 /* ============================= */
-/* FLECHA DERECHA */
+/* RIGHT ARROW */
 /* ============================= */
 
 .arrow {
@@ -462,7 +461,7 @@ body::after {
 
 
 /* ============================= */
-/* RESERVAR CITA */
+/* BOOK APPOINTMENT BUTTON */
 /* ============================= */
 
 .booking {
@@ -516,7 +515,7 @@ body::after {
 
 
 /* ============================= */
-/* EFECTOS DE REDES */
+/* SOCIAL BUTTON HOVER COLORS */
 /* ============================= */
 
 .phone:hover {
@@ -541,7 +540,7 @@ body::after {
 
 
 /* ============================= */
-/* HORARIOS */
+/* BUSINESS HOURS */
 /* ============================= */
 
 .schedule {
@@ -569,7 +568,7 @@ body::after {
 
 
 /* ============================= */
-/* TÍTULO HORARIOS */
+/* BUSINESS HOURS TITLE */
 /* ============================= */
 
 .schedule-title {
@@ -599,7 +598,7 @@ body::after {
 
 
 /* ============================= */
-/* FILAS DE HORARIOS */
+/* BUSINESS HOURS ROWS */
 /* ============================= */
 
 .schedule-row {
@@ -640,7 +639,7 @@ body::after {
 
 
 /* ============================= */
-/* DÍA CERRADO */
+/* CLOSED DAY */
 /* ============================= */
 
 .schedule-row.closed span:last-child {
@@ -651,7 +650,7 @@ body::after {
 
 
 /* ============================= */
-/* SÁBADO */
+/* SATURDAY */
 /* ============================= */
 
 .schedule-row.saturday {
@@ -664,7 +663,7 @@ body::after {
 
 
 /* ============================= */
-/* SEPARADOR PAGOS */
+/* PAYMENTS DIVIDER */
 /* ============================= */
 
 .separator {
@@ -700,7 +699,7 @@ body::after {
 
 
 /* ============================= */
-/* ZELLE */
+/* ZELLE BUTTON */
 /* ============================= */
 
 .zelle {
@@ -759,7 +758,7 @@ footer strong {
 
 
 /* ============================= */
-/* MODAL ZELLE */
+/* ZELLE MODAL */
 /* ============================= */
 
 .modal {
@@ -789,7 +788,7 @@ footer strong {
 
 
 /* ============================= */
-/* CONTENIDO DEL MODAL */
+/* MODAL CONTENT */
 /* ============================= */
 
 .modal-content {
@@ -847,7 +846,7 @@ footer strong {
 
 
 /* ============================= */
-/* BOTÓN CERRAR MODAL */
+/* CLOSE MODAL BUTTON */
 /* ============================= */
 
 .close {
@@ -872,7 +871,7 @@ footer strong {
 
 
 /* ============================= */
-/* ICONO ZELLE */
+/* ZELLE ICON */
 /* ============================= */
 
 .zelle-logo {
@@ -906,7 +905,7 @@ footer strong {
 
 
 /* ============================= */
-/* TEXTO DEL MODAL */
+/* MODAL TEXT */
 /* ============================= */
 
 .modal-content h2 {
@@ -925,7 +924,7 @@ footer strong {
 
 
 /* ============================= */
-/* NÚMERO ZELLE */
+/* ZELLE PHONE NUMBER */
 /* ============================= */
 
 .number-box {
@@ -953,7 +952,7 @@ footer strong {
 
 
 /* ============================= */
-/* BOTÓN COPIAR */
+/* COPY NUMBER BUTTON */
 /* ============================= */
 
 .copy-btn {
@@ -998,7 +997,7 @@ footer strong {
 
 
 /* ============================= */
-/* MENSAJE NÚMERO COPIADO */
+/* NUMBER COPIED MESSAGE */
 /* ============================= */
 
 .copy-message {
@@ -1015,7 +1014,7 @@ footer strong {
 
 
 /* ============================= */
-/* NOTA DE ZELLE */
+/* ZELLE NOTE */
 /* ============================= */
 
 .zelle-note {
@@ -1030,7 +1029,7 @@ footer strong {
 
 
 /* ============================= */
-/* TABLETS / CELULARES */
+/* MOBILE */
 /* ============================= */
 
 @media (max-width: 520px) {
@@ -1065,7 +1064,7 @@ footer strong {
   }
 
 
-  /* TEXTO */
+  /* HEADER */
 
   .subtitle {
     font-size: 9px;
@@ -1097,7 +1096,7 @@ footer strong {
   }
 
 
-  /* HORARIOS */
+  /* BUSINESS HOURS */
 
   .schedule {
     margin-top: 25px;
@@ -1118,7 +1117,7 @@ footer strong {
   }
 
 
-  /* PAGOS */
+  /* PAYMENTS */
 
   .separator {
     margin:
@@ -1131,7 +1130,7 @@ footer strong {
 
 
 /* ============================= */
-/* CELULARES MUY PEQUEÑOS */
+/* SMALL MOBILE DEVICES */
 /* ============================= */
 
 @media (max-width: 380px) {

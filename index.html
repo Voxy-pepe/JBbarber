@@ -10,9 +10,15 @@
     content="width=device-width, initial-scale=1.0"
   >
 
+  <meta
+    name="description"
+    content="JBbarber - Reserva tu cita, contáctanos y síguenos en nuestras redes sociales."
+  >
+
   <title>JBbarber</title>
 
-  <!-- FUENTES -->
+
+  <!-- FUENTES GOOGLE -->
 
   <link
     rel="preconnect"
@@ -31,7 +37,7 @@
   >
 
 
-  <!-- ICONOS -->
+  <!-- FONT AWESOME -->
 
   <link
     rel="stylesheet"
@@ -39,1471 +45,14 @@
   >
 
 
-  <style>
-
-    /* ============================= */
-    /* CONFIGURACIÓN GENERAL */
-    /* ============================= */
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-
-    :root {
-
-      --red: #d71920;
-
-      --red-light: #f52a32;
-
-      --blue: #0057b8;
-
-      --blue-light: #1479e8;
-
-      --white: #ffffff;
-
-      --black: #050505;
-
-      --card: rgba(18, 18, 18, .90);
-
-    }
-
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-
-    body {
-
-      min-height: 100vh;
-
-      font-family:
-        "Montserrat",
-        sans-serif;
-
-      color: white;
-
-      background:
-
-        radial-gradient(
-          circle at 20% 10%,
-          rgba(0, 87, 184, .18),
-          transparent 30%
-        ),
-
-        radial-gradient(
-          circle at 80% 10%,
-          rgba(215, 25, 32, .18),
-          transparent 30%
-        ),
-
-        linear-gradient(
-          160deg,
-          #181818,
-          #080808 45%,
-          #000
-        );
-
-      display: flex;
-
-      justify-content: center;
-
-      align-items: flex-start;
-
-      padding:
-        25px
-        15px
-        50px;
-
-      overflow-x: hidden;
-
-    }
-
-
-
-    /* ============================= */
-    /* LUCES DEL FONDO */
-    /* ============================= */
-
-    body::before,
-    body::after {
-
-      content: "";
-
-      position: fixed;
-
-      width: 280px;
-
-      height: 280px;
-
-      border-radius: 50%;
-
-      filter:
-        blur(90px);
-
-      opacity: .15;
-
-      pointer-events: none;
-
-      z-index: 0;
-
-    }
-
-
-    body::before {
-
-      background:
-        var(--red);
-
-      top: -80px;
-
-      right: -100px;
-
-    }
-
-
-    body::after {
-
-      background:
-        var(--blue);
-
-      bottom: -100px;
-
-      left: -100px;
-
-    }
-
-
-
-    /* ============================= */
-    /* CONTENEDOR */
-    /* ============================= */
-
-    .page {
-
-      position: relative;
-
-      z-index: 1;
-
-      width: 100%;
-
-      max-width: 500px;
-
-    }
-
-
-
-    /* ============================= */
-    /* TARJETA PRINCIPAL */
-    /* ============================= */
-
-    .card {
-
-      position: relative;
-
-      overflow: hidden;
-
-      padding:
-        28px
-        22px
-        26px;
-
-      border-radius: 28px;
-
-      background:
-
-        linear-gradient(
-          180deg,
-          rgba(255,255,255,.05),
-          rgba(255,255,255,.015)
-        ),
-
-        var(--card);
-
-      border:
-        1px solid
-        rgba(255,255,255,.12);
-
-      box-shadow:
-
-        0 30px 80px
-        rgba(0,0,0,.55),
-
-        inset
-        0 1px 0
-        rgba(255,255,255,.08);
-
-      backdrop-filter:
-        blur(18px);
-
-    }
-
-
-
-    /* ============================= */
-    /* BARRA DE BARBERÍA */
-    /* ============================= */
-
-    .barber-top {
-
-      position: absolute;
-
-      top: 0;
-
-      left: 0;
-
-      width: 100%;
-
-      height: 9px;
-
-      background:
-
-        repeating-linear-gradient(
-
-          135deg,
-
-          var(--red) 0px,
-
-          var(--red) 18px,
-
-          white 18px,
-
-          white 36px,
-
-          var(--blue) 36px,
-
-          var(--blue) 54px,
-
-          white 54px,
-
-          white 72px
-
-        );
-
-      background-size:
-        100px 100px;
-
-      animation:
-        barberMove
-        4s
-        linear
-        infinite;
-
-    }
-
-
-
-    @keyframes barberMove {
-
-      from {
-
-        background-position:
-          0 0;
-
-      }
-
-      to {
-
-        background-position:
-          100px 0;
-
-      }
-
-    }
-
-
-
-    /* ============================= */
-    /* LOGO */
-    /* ============================= */
-
-    .logo-wrapper {
-
-      width: 100%;
-
-      display: flex;
-
-      justify-content: center;
-
-      align-items: center;
-
-      margin-top: 12px;
-
-      margin-bottom: 8px;
-
-    }
-
-
-    .barber-logo {
-
-      width: 90px !important;
-
-      max-width: 90px !important;
-
-      height: auto !important;
-
-      display: block;
-
-      object-fit: contain;
-
-      margin:
-        0
-        auto;
-
-      filter:
-
-        drop-shadow(
-          0
-          8px
-          14px
-          rgba(0,0,0,.65)
-        );
-
-      transition:
-        transform
-        .3s
-        ease;
-
-    }
-
-
-    .barber-logo:hover {
-
-      transform:
-        scale(1.04);
-
-    }
-
-
-
-    /* ============================= */
-    /* TEXTO SUPERIOR */
-    /* ============================= */
-
-    .brand {
-
-      text-align: center;
-
-      margin-top: 5px;
-
-    }
-
-
-    .subtitle {
-
-      margin-top: 4px;
-
-      color: #aaa;
-
-      font-size: 10px;
-
-      text-transform: uppercase;
-
-      letter-spacing: 3px;
-
-    }
-
-
-    .badge {
-
-      display: inline-flex;
-
-      align-items: center;
-
-      gap: 7px;
-
-      margin-top: 14px;
-
-      padding:
-        8px
-        13px;
-
-      border-radius:
-        999px;
-
-      background:
-        rgba(255,255,255,.055);
-
-      border:
-        1px solid
-        rgba(255,255,255,.09);
-
-      color: #ccc;
-
-      font-size: 11px;
-
-      font-weight: 600;
-
-    }
-
-
-    .badge i {
-
-      color:
-        var(--red);
-
-    }
-
-
-
-    /* ============================= */
-    /* BOTONES */
-    /* ============================= */
-
-    .links {
-
-      margin-top: 27px;
-
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 13px;
-
-    }
-
-
-    .link {
-
-      position: relative;
-
-      width: 100%;
-
-      min-height: 61px;
-
-      padding:
-
-        17px
-
-        45px
-
-        17px
-
-        60px;
-
-      border-radius:
-        17px;
-
-      display: flex;
-
-      align-items: center;
-
-      font-family:
-        "Montserrat",
-        sans-serif;
-
-      font-size: 14px;
-
-      font-weight: 700;
-
-      color: white;
-
-      text-decoration: none;
-
-      background:
-
-        linear-gradient(
-
-          135deg,
-
-          rgba(255,255,255,.07),
-
-          rgba(255,255,255,.025)
-
-        );
-
-      border:
-
-        1px solid
-
-        rgba(255,255,255,.10);
-
-      box-shadow:
-
-        inset
-
-        0
-
-        1px
-
-        0
-
-        rgba(255,255,255,.06);
-
-      cursor: pointer;
-
-      overflow: hidden;
-
-      transition:
-
-        transform .25s ease,
-
-        border-color .25s ease,
-
-        background .25s ease,
-
-        box-shadow .25s ease;
-
-    }
-
-
-
-    /* BRILLO DE LOS BOTONES */
-
-    .link::before {
-
-      content: "";
-
-      position: absolute;
-
-      top: -50%;
-
-      left: -60%;
-
-      width: 35%;
-
-      height: 200%;
-
-      transform:
-        rotate(25deg);
-
-      background:
-
-        linear-gradient(
-
-          90deg,
-
-          transparent,
-
-          rgba(255,255,255,.18),
-
-          transparent
-
-        );
-
-      transition:
-        .55s;
-
-    }
-
-
-    .link:hover::before {
-
-      left:
-        130%;
-
-    }
-
-
-    .link:hover {
-
-      transform:
-        translateY(-3px);
-
-      background:
-
-        linear-gradient(
-
-          135deg,
-
-          rgba(255,255,255,.11),
-
-          rgba(255,255,255,.04)
-
-        );
-
-      border-color:
-        rgba(255,255,255,.2);
-
-      box-shadow:
-
-        0
-
-        12px
-
-        25px
-
-        rgba(0,0,0,.22);
-
-    }
-
-
-
-    /* ============================= */
-    /* ICONOS */
-    /* ============================= */
-
-    .icon-box {
-
-      position: absolute;
-
-      left: 12px;
-
-      width: 39px;
-
-      height: 39px;
-
-      border-radius:
-        12px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      background:
-        rgba(255,255,255,.07);
-
-      border:
-        1px solid
-        rgba(255,255,255,.08);
-
-      font-size:
-        18px;
-
-    }
-
-
-
-    /* ============================= */
-    /* FLECHA */
-    /* ============================= */
-
-    .arrow {
-
-      position: absolute;
-
-      right: 18px;
-
-      opacity: .45;
-
-      font-size:
-        13px;
-
-    }
-
-
-
-    /* ============================= */
-    /* RESERVAR CITA */
-    /* ============================= */
-
-    .booking {
-
-      min-height: 68px;
-
-      background:
-
-        linear-gradient(
-
-          135deg,
-
-          var(--red-light),
-
-          #a20d12
-
-        );
-
-      border:
-
-        1px solid
-
-        rgba(255,255,255,.24);
-
-      box-shadow:
-
-        0
-
-        14px
-
-        35px
-
-        rgba(215,25,32,.22);
-
-    }
-
-
-    .booking:hover {
-
-      background:
-
-        linear-gradient(
-
-          135deg,
-
-          #ff353d,
-
-          #be1117
-
-        );
-
-    }
-
-
-    .booking .icon-box {
-
-      background:
-        rgba(0,0,0,.18);
-
-    }
-
-
-    .booking-text {
-
-      display: flex;
-
-      flex-direction: column;
-
-      align-items:
-        flex-start;
-
-    }
-
-
-    .booking-text small {
-
-      margin-top:
-        2px;
-
-      font-size:
-        10px;
-
-      font-weight:
-        500;
-
-      opacity:
-        .72;
-
-    }
-
-
-
-    /* ============================= */
-    /* COLORES AL PASAR EL MOUSE */
-    /* ============================= */
-
-    .phone:hover {
-
-      border-color:
-        rgba(255,255,255,.4);
-
-    }
-
-
-    .whatsapp:hover {
-
-      border-color:
-        #25d366;
-
-    }
-
-
-    .instagram:hover {
-
-      border-color:
-        #e1306c;
-
-    }
-
-
-    .tiktok:hover {
-
-      border-color:
-        #25f4ee;
-
-    }
-
-
-
-    /* ============================= */
-    /* PAGOS */
-    /* ============================= */
-
-    .separator {
-
-      display: flex;
-
-      align-items:
-        center;
-
-      gap: 12px;
-
-      margin:
-        24px
-        0
-        4px;
-
-      color:
-        #555;
-
-      font-size:
-        11px;
-
-    }
-
-
-    .separator::before,
-    .separator::after {
-
-      content: "";
-
-      flex:
-        1;
-
-      height:
-        1px;
-
-      background:
-        rgba(255,255,255,.08);
-
-    }
-
-
-
-    /* ============================= */
-    /* ZELLE */
-    /* ============================= */
-
-    .zelle {
-
-      text-align:
-        left;
-
-      background:
-
-        linear-gradient(
-
-          135deg,
-
-          #6d1ed4,
-
-          #4d0d9f
-
-        );
-
-      border:
-
-        1px solid
-
-        rgba(255,255,255,.15);
-
-      box-shadow:
-
-        0
-
-        12px
-
-        30px
-
-        rgba(109,30,212,.18);
-
-    }
-
-
-    .zelle:hover {
-
-      background:
-
-        linear-gradient(
-
-          135deg,
-
-          #7f30e8,
-
-          #5b13b7
-
-        );
-
-    }
-
-
-    .zelle .icon-box {
-
-      background:
-        rgba(0,0,0,.16);
-
-    }
-
-
-
-    /* ============================= */
-    /* FOOTER */
-    /* ============================= */
-
-    footer {
-
-      margin-top:
-        24px;
-
-      text-align:
-        center;
-
-      color:
-        #666;
-
-      font-size:
-        11px;
-
-      letter-spacing:
-        .4px;
-
-    }
-
-
-    footer strong {
-
-      color:
-        #bbb;
-
-    }
-
-
-
-    /* ============================= */
-    /* MODAL ZELLE */
-    /* ============================= */
-
-    .modal {
-
-      position: fixed;
-
-      inset:
-        0;
-
-      display:
-        none;
-
-      justify-content:
-        center;
-
-      align-items:
-        center;
-
-      padding:
-        18px;
-
-      background:
-        rgba(0,0,0,.86);
-
-      backdrop-filter:
-        blur(10px);
-
-      z-index:
-        999;
-
-    }
-
-
-    .modal.active {
-
-      display:
-        flex;
-
-    }
-
-
-
-    /* ============================= */
-    /* CONTENIDO MODAL */
-    /* ============================= */
-
-    .modal-content {
-
-      position:
-        relative;
-
-      width:
-        100%;
-
-      max-width:
-        390px;
-
-      padding:
-
-        32px
-
-        24px
-
-        25px;
-
-      border-radius:
-        24px;
-
-      background:
-
-        linear-gradient(
-
-          145deg,
-
-          #1c1c1c,
-
-          #0e0e0e
-
-        );
-
-      border:
-
-        1px solid
-
-        rgba(255,255,255,.12);
-
-      box-shadow:
-
-        0
-
-        30px
-
-        90px
-
-        rgba(0,0,0,.75);
-
-      text-align:
-        center;
-
-      animation:
-        popup
-        .25s
-        ease;
-
-    }
-
-
-    @keyframes popup {
-
-      from {
-
-        opacity:
-          0;
-
-        transform:
-
-          scale(.92)
-
-          translateY(10px);
-
-      }
-
-      to {
-
-        opacity:
-          1;
-
-        transform:
-
-          scale(1)
-
-          translateY(0);
-
-      }
-
-    }
-
-
-
-    /* ============================= */
-    /* CERRAR MODAL */
-    /* ============================= */
-
-    .close {
-
-      position:
-        absolute;
-
-      top:
-        12px;
-
-      right:
-        17px;
-
-      color:
-        #888;
-
-      font-size:
-        29px;
-
-      cursor:
-        pointer;
-
-    }
-
-
-    .close:hover {
-
-      color:
-        white;
-
-    }
-
-
-
-    /* ============================= */
-    /* LOGO ZELLE */
-    /* ============================= */
-
-    .zelle-logo {
-
-      width:
-        70px;
-
-      height:
-        70px;
-
-      margin:
-
-        0
-
-        auto
-
-        17px;
-
-      border-radius:
-        20px;
-
-      display:
-        flex;
-
-      justify-content:
-        center;
-
-      align-items:
-        center;
-
-      background:
-
-        linear-gradient(
-
-          135deg,
-
-          #7d2ce2,
-
-          #5611a8
-
-        );
-
-      font-size:
-        27px;
-
-      box-shadow:
-
-        0
-
-        15px
-
-        35px
-
-        rgba(109,30,212,.25);
-
-    }
-
-
-
-    /* ============================= */
-    /* TEXTO MODAL */
-    /* ============================= */
-
-    .modal-content h2 {
-
-      font-size:
-        22px;
-
-    }
-
-
-    .description {
-
-      margin-top:
-        9px;
-
-      color:
-        #999;
-
-      line-height:
-        1.65;
-
-      font-size:
-        13px;
-
-    }
-
-
-
-    /* ============================= */
-    /* NÚMERO ZELLE */
-    /* ============================= */
-
-    .number-box {
-
-      margin:
-
-        20px
-
-        0
-
-        14px;
-
-      padding:
-        16px;
-
-      border-radius:
-        14px;
-
-      background:
-        rgba(255,255,255,.055);
-
-      border:
-        1px solid
-        rgba(255,255,255,.09);
-
-      font-size:
-        20px;
-
-      font-weight:
-        700;
-
-      letter-spacing:
-        .4px;
-
-    }
-
-
-
-    /* ============================= */
-    /* BOTÓN COPIAR */
-    /* ============================= */
-
-    .copy-btn {
-
-      width:
-        100%;
-
-      padding:
-        15px;
-
-      border-radius:
-        13px;
-
-      border:
-        none;
-
-      background:
-        #6d1ed4;
-
-      color:
-        white;
-
-      font-family:
-        "Montserrat",
-        sans-serif;
-
-      font-size:
-        13px;
-
-      font-weight:
-        700;
-
-      cursor:
-        pointer;
-
-      transition:
-        .2s;
-
-    }
-
-
-    .copy-btn:hover {
-
-      transform:
-        translateY(-2px);
-
-      background:
-        #7d2ce2;
-
-    }
-
-
-    .copy-btn i {
-
-      margin-right:
-        7px;
-
-    }
-
-
-
-    /* ============================= */
-    /* MENSAJE COPIADO */
-    /* ============================= */
-
-    .copy-message {
-
-      display:
-        none;
-
-      margin-top:
-        11px;
-
-      color:
-        #79e58e;
-
-      font-size:
-        12px;
-
-      font-weight:
-        600;
-
-    }
-
-
-
-    /* ============================= */
-    /* NOTA ZELLE */
-    /* ============================= */
-
-    .zelle-note {
-
-      margin-top:
-        18px;
-
-      color:
-        #666;
-
-      font-size:
-        11px;
-
-      line-height:
-        1.6;
-
-    }
-
-
-
-    /* ============================= */
-    /* CELULARES */
-    /* ============================= */
-
-    @media (max-width: 520px) {
-
-      body {
-
-        padding:
-          16px
-          12px
-          35px;
-
-      }
-
-
-      .card {
-
-        padding:
-          25px
-          17px
-          24px;
-
-        border-radius:
-          24px;
-
-      }
-
-
-      .barber-logo {
-
-        width:
-          75px !important;
-
-        max-width:
-          75px !important;
-
-      }
-
-
-      .logo-wrapper {
-
-        margin-top:
-          10px;
-
-        margin-bottom:
-          7px;
-
-      }
-
-
-      .subtitle {
-
-        font-size:
-          9px;
-
-        letter-spacing:
-          2.5px;
-
-      }
-
-
-      .badge {
-
-        margin-top:
-          12px;
-
-        font-size:
-          10px;
-
-      }
-
-
-      .links {
-
-        margin-top:
-          24px;
-
-      }
-
-
-      .link {
-
-        min-height:
-          58px;
-
-        font-size:
-          13px;
-
-      }
-
-
-      .booking {
-
-        min-height:
-          65px;
-
-      }
-
-    }
-
-
-
-    /* CELULARES MUY PEQUEÑOS */
-
-    @media (max-width: 380px) {
-
-      .barber-logo {
-
-        width:
-          65px !important;
-
-        max-width:
-          65px !important;
-
-      }
-
-    }
-
-  </style>
+  <!-- NUESTRO CSS -->
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
 
 </head>
-
 
 
 <body>
@@ -1515,19 +64,23 @@
     <main class="card">
 
 
-      <!-- BARRA DE BARBERÍA -->
+      <!-- ============================= -->
+      <!-- BARRA CLÁSICA DE BARBERÍA -->
+      <!-- ============================= -->
 
       <div class="barber-top"></div>
 
 
 
+      <!-- ============================= -->
       <!-- LOGO -->
+      <!-- ============================= -->
 
       <div class="logo-wrapper">
 
         <img
           src="jbbarber-logo.png"
-          alt="JBbarber"
+          alt="Logo JBbarber"
           class="barber-logo"
         >
 
@@ -1535,9 +88,12 @@
 
 
 
-      <!-- TEXTO -->
+      <!-- ============================= -->
+      <!-- TEXTO SUPERIOR -->
+      <!-- ============================= -->
 
       <div class="brand">
+
 
         <p class="subtitle">
 
@@ -1554,28 +110,28 @@
 
         </div>
 
+
       </div>
 
 
 
-      <!-- BOTONES -->
+      <!-- ============================= -->
+      <!-- LINKS -->
+      <!-- ============================= -->
 
       <div class="links">
 
 
 
+        <!-- ============================= -->
         <!-- RESERVAR CITA -->
+        <!-- ============================= -->
 
         <a
-
           class="link booking"
-
           href="https://javiercutz.booksy.com/a/"
-
           target="_blank"
-
           rel="noopener noreferrer"
-
         >
 
 
@@ -1587,6 +143,7 @@
 
 
           <div class="booking-text">
+
 
             <span>
 
@@ -1601,24 +158,26 @@
 
             </small>
 
+
           </div>
 
 
-          <i class="fa-solid fa-chevron-right arrow"></i>
+          <i
+            class="fa-solid fa-chevron-right arrow"
+          ></i>
 
 
         </a>
 
 
 
+        <!-- ============================= -->
         <!-- LLAMAR -->
+        <!-- ============================= -->
 
         <a
-
           class="link phone"
-
           href="tel:+16598373060"
-
         >
 
 
@@ -1636,25 +195,24 @@
           </span>
 
 
-          <i class="fa-solid fa-chevron-right arrow"></i>
+          <i
+            class="fa-solid fa-chevron-right arrow"
+          ></i>
 
 
         </a>
 
 
 
+        <!-- ============================= -->
         <!-- WHATSAPP -->
+        <!-- ============================= -->
 
         <a
-
           class="link whatsapp"
-
           href="https://wa.me/16598373060"
-
           target="_blank"
-
           rel="noopener noreferrer"
-
         >
 
 
@@ -1672,25 +230,24 @@
           </span>
 
 
-          <i class="fa-solid fa-chevron-right arrow"></i>
+          <i
+            class="fa-solid fa-chevron-right arrow"
+          ></i>
 
 
         </a>
 
 
 
+        <!-- ============================= -->
         <!-- INSTAGRAM -->
+        <!-- ============================= -->
 
         <a
-
           class="link instagram"
-
           href="https://www.instagram.com/jb_cutz.08/"
-
           target="_blank"
-
           rel="noopener noreferrer"
-
         >
 
 
@@ -1708,25 +265,24 @@
           </span>
 
 
-          <i class="fa-solid fa-chevron-right arrow"></i>
+          <i
+            class="fa-solid fa-chevron-right arrow"
+          ></i>
 
 
         </a>
 
 
 
+        <!-- ============================= -->
         <!-- TIKTOK -->
+        <!-- ============================= -->
 
         <a
-
           class="link tiktok"
-
           href="https://www.tiktok.com/@jb.cutz08?lang=es-419"
-
           target="_blank"
-
           rel="noopener noreferrer"
-
         >
 
 
@@ -1744,14 +300,18 @@
           </span>
 
 
-          <i class="fa-solid fa-chevron-right arrow"></i>
+          <i
+            class="fa-solid fa-chevron-right arrow"
+          ></i>
 
 
         </a>
 
 
 
+        <!-- ============================= -->
         <!-- SEPARADOR -->
+        <!-- ============================= -->
 
         <div class="separator">
 
@@ -1761,16 +321,14 @@
 
 
 
+        <!-- ============================= -->
         <!-- ZELLE -->
+        <!-- ============================= -->
 
         <button
-
           class="link zelle"
-
           type="button"
-
           onclick="openZelle()"
-
         >
 
 
@@ -1788,7 +346,9 @@
           </span>
 
 
-          <i class="fa-solid fa-chevron-right arrow"></i>
+          <i
+            class="fa-solid fa-chevron-right arrow"
+          ></i>
 
 
         </button>
@@ -1798,7 +358,9 @@
 
 
 
+      <!-- ============================= -->
       <!-- FOOTER -->
+      <!-- ============================= -->
 
       <footer>
 
@@ -1822,17 +384,13 @@
 
 
 
-  <!-- ============================= -->
-  <!-- VENTANA ZELLE -->
-  <!-- ============================= -->
-
+  <!-- ================================= -->
+  <!-- MODAL / VENTANA ZELLE -->
+  <!-- ================================= -->
 
   <div
-
     class="modal"
-
     id="zelleModal"
-
   >
 
 
@@ -1842,11 +400,8 @@
       <!-- CERRAR -->
 
       <span
-
         class="close"
-
         onclick="closeZelle()"
-
       >
 
         &times;
@@ -1855,7 +410,7 @@
 
 
 
-      <!-- ICONO -->
+      <!-- ICONO ZELLE -->
 
       <div class="zelle-logo">
 
@@ -1865,6 +420,8 @@
 
 
 
+      <!-- TITULO -->
+
       <h2>
 
         Pagar con Zelle
@@ -1872,6 +429,8 @@
       </h2>
 
 
+
+      <!-- DESCRIPCIÓN -->
 
       <p class="description">
 
@@ -1891,32 +450,30 @@
 
 
 
-      <!-- COPIAR -->
+      <!-- COPIAR NÚMERO -->
 
       <button
-
         class="copy-btn"
-
         type="button"
-
         onclick="copyZelleNumber()"
-
       >
+
 
         <i class="fa-regular fa-copy"></i>
 
+
         Copiar número
+
 
       </button>
 
 
 
+      <!-- MENSAJE -->
+
       <p
-
         class="copy-message"
-
         id="copyMessage"
-
       >
 
         ✓ Número copiado
@@ -1924,6 +481,8 @@
       </p>
 
 
+
+      <!-- NOTA -->
 
       <p class="zelle-note">
 
@@ -1939,49 +498,68 @@
 
 
 
-  <!-- ============================= -->
+  <!-- ================================= -->
   <!-- JAVASCRIPT -->
-  <!-- ============================= -->
-
+  <!-- ================================= -->
 
   <script>
 
 
+    /* ============================= */
     /* ABRIR ZELLE */
+    /* ============================= */
 
     function openZelle() {
 
-      document
-        .getElementById("zelleModal")
-        .classList
-        .add("active");
+
+      const modal =
+        document.getElementById(
+          "zelleModal"
+        );
+
+
+      modal.classList.add(
+        "active"
+      );
 
 
       document.body.style.overflow =
         "hidden";
 
+
     }
 
 
 
+    /* ============================= */
     /* CERRAR ZELLE */
+    /* ============================= */
 
     function closeZelle() {
 
-      document
-        .getElementById("zelleModal")
-        .classList
-        .remove("active");
+
+      const modal =
+        document.getElementById(
+          "zelleModal"
+        );
+
+
+      modal.classList.remove(
+        "active"
+      );
 
 
       document.body.style.overflow =
         "auto";
 
+
     }
 
 
 
-    /* COPIAR NÚMERO */
+    /* ============================= */
+    /* COPIAR NÚMERO DE ZELLE */
+    /* ============================= */
 
     async function copyZelleNumber() {
 
@@ -1998,11 +576,11 @@
           .writeText(number);
 
 
+
         const message =
-          document
-            .getElementById(
-              "copyMessage"
-            );
+          document.getElementById(
+            "copyMessage"
+          );
 
 
         message.style.display =
@@ -2012,8 +590,10 @@
         setTimeout(
           function() {
 
+
             message.style.display =
               "none";
+
 
           },
 
@@ -2040,41 +620,43 @@
 
 
 
-    /* CERRAR TOCANDO AFUERA */
+    /* ============================= */
+    /* CERRAR MODAL AL TOCAR AFUERA */
+    /* ============================= */
 
     window.addEventListener(
-
       "click",
 
       function(event) {
 
 
         const modal =
-          document
-            .getElementById(
-              "zelleModal"
-            );
+          document.getElementById(
+            "zelleModal"
+          );
 
 
         if (
           event.target === modal
         ) {
 
+
           closeZelle();
+
 
         }
 
 
       }
-
     );
 
 
 
+    /* ============================= */
     /* CERRAR CON ESC */
+    /* ============================= */
 
     document.addEventListener(
-
       "keydown",
 
       function(event) {
@@ -2084,13 +666,14 @@
           event.key === "Escape"
         ) {
 
+
           closeZelle();
+
 
         }
 
 
       }
-
     );
 
 
